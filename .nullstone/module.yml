@@ -1,0 +1,14 @@
+org_name: nullstone
+name: aws-ecs-cron-trigger
+friendly_name: Scheduled Trigger for ECS/Fargate
+description: Triggers an ECS/Fargate task on a schedule
+category: capability
+subcategory: events
+provider_types:
+    - aws
+platform: ecs
+subplatform: ""
+type: ""
+appCategories:
+    - container
+is_public: true
