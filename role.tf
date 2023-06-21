@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "this_assume" {
+data "aws_iam_policy_document" "events_assume" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -10,12 +10,12 @@ data "aws_iam_policy_document" "this_assume" {
   }
 }
 
-resource "aws_iam_role" "this" {
-  name               = "${local.resource_name}-exec"
-  assume_role_policy = data.aws_iam_policy_document.this_assume.json
+resource "aws_iam_role" "events" {
+  name               = "${local.resource_name}-events"
+  assume_role_policy = data.aws_iam_policy_document.events_assume.json
 }
 
-data "aws_iam_policy_document" "this" {
+data "aws_iam_policy_document" "events" {
   statement {
     effect    = "Allow"
     actions   = ["iam:PassRole"]
@@ -30,6 +30,6 @@ data "aws_iam_policy_document" "this" {
 }
 
 resource "aws_iam_role_policy" "this" {
-  role   = aws_iam_role.this.id
-  policy = data.aws_iam_policy_document.this.json
+  role   = aws_iam_role.events.id
+  policy = data.aws_iam_policy_document.events.json
 }
