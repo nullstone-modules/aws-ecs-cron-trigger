@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "events" {
   }
 }
 
-resource "aws_iam_role_policy" "this" {
+resource "aws_iam_role_policy" "events" {
   role   = aws_iam_role.events.id
   policy = data.aws_iam_policy_document.events.json
 }
