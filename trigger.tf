@@ -12,7 +12,7 @@ resource "aws_cloudwatch_event_target" "this" {
   ecs_target {
     tags                   = local.tags
     task_count             = 1
-    task_definition_arn    = local.task_definition_arn
+    task_definition_arn    = "arn:aws:ecs:${local.region}:${local.account_id}:task-definition/${local.task_definition_name}:latest"
     launch_type            = local.launch_type
     enable_execute_command = true
 
