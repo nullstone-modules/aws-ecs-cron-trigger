@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "this" {
+data "aws_iam_policy_document" "this_assume" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "this" {
 
 resource "aws_iam_role" "this" {
   name               = "${local.resource_name}-exec"
-  assume_role_policy = data.aws_iam_policy_document.this.json
+  assume_role_policy = data.aws_iam_policy_document.this_assume.json
 }
 
 data "aws_iam_policy_document" "this" {
