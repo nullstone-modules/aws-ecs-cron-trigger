@@ -10,5 +10,5 @@ data "ns_app_connection" "cluster" {
 }
 
 locals {
-  cluster_arn = data.ns_app_connection.cluster.cluster_arn
+  cluster_arn = data.ns_app_connection.cluster.outputs.cluster_arn
 }
