@@ -9,10 +9,10 @@ EOF
 }
 
 locals {
-  launch_type         = var.app_metadata["launch_type"]
-  role_name           = var.app_metadata["role_name"]
-  security_group_id   = var.app_metadata["security_group_id"]
-  task_definition_arn = var.app_metadata["task_definition_arn"]
+  launch_type          = var.app_metadata["launch_type"]
+  role_name            = var.app_metadata["role_name"]
+  security_group_id    = var.app_metadata["security_group_id"]
+  task_definition_name = var.app_metadata["task_definition_name"]
 }
 
 variable "schedule" {

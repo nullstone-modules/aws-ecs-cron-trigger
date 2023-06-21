@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "this" {
   statement {
     effect    = "Allow"
     actions   = ["ecs:RunTask"]
-    resources = [replace(local.task_definition_arn, "/:\\d+$/", ":*")]
+    resources = ["arn:aws:ecs:${local.region}:${local.account_id}:task-definition/${local.task_definition_name}:*"]
   }
 }
 
