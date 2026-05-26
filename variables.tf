@@ -10,6 +10,8 @@ EOF
 
 locals {
   task_definition_name = var.app_metadata["task_definition_name"]
+  task_role_arn        = var.app_metadata["role_arn"]
+  execution_role_arn   = var.app_metadata["execution_role_arn"]
 }
 
 variable "schedule" {
