@@ -12,6 +12,7 @@ locals {
   task_definition_name = var.app_metadata["task_definition_name"]
   task_role_arn        = var.app_metadata["role_arn"]
   execution_role_arn   = var.app_metadata["execution_role_arn"]
+  main_container_name  = var.app_metadata["main_container"]
 }
 
 variable "schedule" {
